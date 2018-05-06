@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Separating the signal and the noise in scRNA-Seq data – Florian Wagner, PhD – Computational biology and single-cell RNA-Seq</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="tl;dr - We’ve developed a smoothing algorithm that makes the analysis of high-throughput single-cell RNA-Seq a lot easier. The algorithm effectively removes technical noise while largely preserving biological heterogeneity. You can read the paper on bioRxiv and find reference implementations in Python/R/Matlab on github.
+
+" />
+    <meta property="og:description" content="tl;dr - We’ve developed a smoothing algorithm that makes the analysis of high-throughput single-cell RNA-Seq a lot easier. The algorithm effectively removes technical noise while largely preserving biological heterogeneity. You can read the paper on bioRxiv and find reference implementations in Python/R/Matlab on github.
+
+" />
+    
+    <meta name="author" content="Florian Wagner, PhD" />
+
+    
+    <meta property="og:title" content="Separating the signal and the noise in scRNA-Seq data" />
+    <meta property="twitter:title" content="Separating the signal and the noise in scRNA-Seq data" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="alternate" type="application/rss+xml" title="Florian Wagner, PhD - Computational biology and single-cell RNA-Seq" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/dna-icon-2316641.svg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Florian Wagner, PhD</a></h1>
+            <p class="site-description">Computational biology and single-cell RNA-Seq</p>
+          </div>
+
+          <nav>
+ 	    <a href="/">Blog</a>
+	    <!--<a href="/projects">Projects</a>-->
+	    <!--<a href="/publications">Publications</a>-->
+            <a href="/about">About</a>
+	    <!--<a href="/about">Contact</a>-->
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Separating the signal and the noise in scRNA-Seq data</h1>
+
+  <div class="entry">
+    <p><em>tl;dr - We’ve developed a smoothing algorithm that makes the analysis of high-throughput single-cell RNA-Seq <strong>a lot</strong> easier. The algorithm effectively removes technical noise while largely preserving biological heterogeneity. You can <a href="https://www.biorxiv.org/content/early/2017/11/21/217737">read the paper on bioRxiv</a> and find <a href="https://github.com/yanailab/knn-smoothing">reference implementations in Python/R/Matlab on github</a>.</em></p>
+
+<p>In the YanaiLab, we love single-cell RNA-Seq data, and we’re proud of our work in developing new and innovative scRNA-Seq protocols, including <a href="https://www.ncbi.nlm.nih.gov/pubmed/22939981">CEL-Seq</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/27121950">CEL-Seq2</a>, and most recently, <a href="https://www.ncbi.nlm.nih.gov/pubmed/29073931">scDual-Seq</a>. We also perform <a href="https://www.ncbi.nlm.nih.gov/pubmed/26000487">inDrop</a> in the lab, which was developed based on the CEL-Seq protocol, and share the widespread excitement about the ability of high-throughput scRNA-Seq technologies such as inDrop, <a href="https://www.ncbi.nlm.nih.gov/pubmed/26000488">Drop-Seq</a> or <a href="https://www.ncbi.nlm.nih.gov/pubmed/28192419">Seq-Well</a> to transform our understanding of complex diseases.</p>
+
+<p>However, anyone who has worked with scRNA-Seq data also knows that analyzing single-cell expression data can be challenging, given how noisy the data is. Even in the absence of differential expression, the observed transcript counts for an individual gene can fluctuate wildly across samples, and sometimes not a single transcript is observed in a portion of cells, even though we have every reason to believe that the gene is expressed in those cells.</p>
+
+<p>By using dimensionality reduction techniques such as PCA and t-SNE, special filtering criteria, and some other clever tricks, we and others have learned to circumvent some of the issues arising from the noisiness of the data. For particular applications, special tools have been developed that fit statistical models to the data, in an effort to extract as much information as possible. But for all of the power of scRNA-Seq, there is something deeply unsatisfying about not being able to properly examine the data without first performing multiple filtering, dimensionality reduction, and clustering steps, each involving the choice of a number of parameters that may require careful tuning for each dataset.</p>
+
+<p>When I joined the lab as a postdoc this summer, I made it my mission to develop a general-purpose method to change that. As a first step, I decided to examine the statistical properties of the noise in high-throughput scRNA-Seq data. To my surprise, I discovered that across protocols, the noise followed simple Poisson statistics, rather than more complex models that assume an excess of zero values (“dropouts”). Based on this observation, and with help from Yun and Itai, I designed the “<em>k-nearest neighbor smoothing</em>” algorithm, which exploits the statistical properties of UMI-filtered scRNA-Seq data to separate the signal from the noise. I would say that it works so well that it has fundamentally changed the way I think about scRNA-Seq data and how it can be analyzed!</p>
+
+<p>Here is an example using data from <a href="http://www.ncbi.nlm.nih.gov/pubmed/27667365">Maayan Baron’s paper</a> on characterizing cell types found in pancreatic islet tissue using scRNA-Seq:</p>
+
+<p><img src="/assets/smoothing_pca.png" alt="PCA before and after kNN-smoothing" /></p>
+
+<p>As can be seen from the PCA plot, cell type clusters become much more easily distinguishable after smoothing. K-nearest neighbor smoothing also makes it much easier to explore scRNA-Seq using <a href="https://www.ncbi.nlm.nih.gov/pubmed/9843981">hierarchically clustered heatmaps</a>, which were once one of the most popular tools for the exploratory analysis of heterogeneous expression datasets, but have lost a lot of their popularity in the age of scRNA-Seq, as they cannot handle noisy data very well. As an example, here is a detail from a heatmap that was generated by clustering the 1,000 most variable genes in a dataset containing 2,109 pancreatic islet cells, before and after smoothing:</p>
+
+<p><img src="/assets/smoothing_heatmap.png" alt="Expression heatmap with and without kNN-smoothing" /></p>
+
+<p>The detail only shows expression profiles from ductal (left), endothelial (middle), and stellate cells (right). Without smoothing, the heatmap is riddled with noise, which almost disappears completely after smoothing with k=15. What’s more, it looks like there are two subpopulations of stellate cells with slightly different expression profiles. The smoothing algorithm preserves this distinction - this is very important, because we want to avoid smoothing over biologically meaningful expression differences.</p>
+
+<p>So how does the algorithm do it? For each cell, it identifies the <em>k</em> most similar cells (“neighbors”), and aggregates (sums up) their transcript counts. This yields “smoothed” expression profiles, where the degree of smoothing is determined by the choice of <em>k</em>. The key part of the algorithm is the unique way in which the <em>k</em> most similar cells are determined: Similarity is measured based on <em>normalized</em> and <em>variance-stabilized</em> expression profiles, and the <em>k</em> cells are identified in a step-wise fashion, based on <em>partially smoothed</em> profiles, leading to more accurate sets of neighbors compared to a one-step approach.</p>
+
+<p>Our paper containing more statistical and algorithmic details, as well as additional examples, can be <a href="https://www.biorxiv.org/content/early/2017/11/21/217737">downloaded from bioRxiv</a>. Reference implementations of the algorithm in Python, R, and Matlab can be <a href="https://github.com/yanailab/knn-smoothing">found on GitHub</a>. (Thanks to Yun Yan and Maayan Baron for contributing the R and Matlab implementations, respectively!) We highly encourage you to try the algorithm on your own scRNA-Seq data, as a simple preprocessing step for whatever type of analysis you’re doing. You might be surprised to find previously hidden signals in your data!</p>
+
+  </div>
+
+  <div class="date">
+    Written on November 29, 2017
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:florian.wagner@nyu.edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/flo-compbio"><i class="svg-icon github"></i></a>
+
+
+
+
+<a href="https://www.twitter.com/flo_compbio"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

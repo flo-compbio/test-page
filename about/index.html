@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>About – Your Name – Web Developer from Somewhere</title>
+    <title>About – Florian Wagner, PhD – Computational biology and single-cell RNA-Seq</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,10 +9,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Web Developer from Somewhere">
-    <meta property="og:description" content="Web Developer from Somewhere" />
+    <meta name="description" content="Computational biology and single-cell RNA-Seq">
+    <meta property="og:description" content="Computational biology and single-cell RNA-Seq" />
     
-    <meta name="author" content="Your Name" />
+    <meta name="author" content="Florian Wagner, PhD" />
 
     
     <meta property="og:title" content="About" />
@@ -23,8 +23,8 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="/test-page2/style.css"/>
-    <link rel="alternate" type="application/rss+xml" title="Your Name - Web Developer from Somewhere" href="/test-page2/feed.xml" />
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="alternate" type="application/rss+xml" title="Florian Wagner, PhD - Computational biology and single-cell RNA-Seq" href="/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -33,16 +33,19 @@
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="/test-page2/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+          <a href="/" class="site-avatar"><img src="/assets/dna-icon-2316641.svg" /></a>
 
           <div class="site-info">
-            <h1 class="site-name"><a href="/test-page2/">Your Name</a></h1>
-            <p class="site-description">Web Developer from Somewhere</p>
+            <h1 class="site-name"><a href="/">Florian Wagner, PhD</a></h1>
+            <p class="site-description">Computational biology and single-cell RNA-Seq</p>
           </div>
 
           <nav>
-            <a href="/test-page2/">Blog</a>
-            <a href="/test-page2/about">About</a>
+ 	    <a href="/">Blog</a>
+	    <!--<a href="/projects">Projects</a>-->
+	    <!--<a href="/publications">Publications</a>-->
+            <a href="/about">About</a>
+	    <!--<a href="/about">Contact</a>-->
           </nav>
         </header>
       </div>
@@ -54,15 +57,280 @@
   <h1>About</h1>
 
   <div class="entry">
-    <p>Some information about you!</p>
+    <h3 id="about-me">About me</h3>
 
-<h3 id="more-information">More Information</h3>
+<p>I’m a computational biologist and Postdoctoral Fellow in <a href="https://yanailab.org/">Dr. Itai Yanai’s lab</a> at NYU School of Medicine. My main research interest lies in developing and applying computational and statistical tools to help improve our understanding of gene regulatory processes. My current research focuses on the development of computational methods for the efficient analysis of single-cell RNA-Seq data. As part of this research, I have recently developed <em>k-nearest neighbor smoothing</em> <a href="https://www.biorxiv.org/content/early/2017/11/21/217737">(Wagner et al., 2017)</a>, a new method for reducing the high levels of technical noise characteristic of high-throughput scRNA-Seq data.</p>
 
-<p>A place to include any other types of information that you’d like to include about yourself.</p>
+<p>In 2017, I received my PhD in Computational Biology and Bioinformatics from Duke University. As part of my dissertation work, I developed <a href="https://github.com/flo-compbio/gopca">GO-PCA (Wagner, 2015)</a>, a new method for systematic exploratory analysis of RNA-Seq data. In the past, I have also been involved in a project studying the development of the nematode C. elegans using microarray expression analysis of precisely staged embryos <a href="https://www.ncbi.nlm.nih.gov/pubmed/22560298">(Levin et al., 2012)</a>, and in the development of <a href="https://www.ncbi.nlm.nih.gov/pubmed/22939981">CEL-Seq (Hashimshony et al., 2012)</a>, an experimental method for linear amplification and high-throughput sequencing of mRNA from single cells.</p>
 
-<h3 id="contact-me">Contact me</h3>
+<p>The things I enjoy most about doing research are learning new things all the time, thinking critically, being creative, solving technical challenges, and working collaboratively.</p>
 
-<p><a href="mailto:email@domain.com">email@domain.com</a></p>
+<h3 id="software">Software</h3>
+
+<ul>
+  <li><a href="https://github.com/flo-compbio/go-pca">GO-PCA</a></li>
+  <li><a href="https://github.com/yanailab/knn-smoothing">kNN-smoothing</a></li>
+</ul>
+
+<h3 id="publications">Publications</h3>
+
+<h4 id="peer-reviewed-research">Peer-reviewed research</h4>
+
+<ol class="bibliography"><li><span id="wagner_go-pca:_2015">Wagner, F. (2015). GO-PCA: An Unsupervised Method to Explore Gene Expression Data Using Prior Knowledge. <i>PloS One</i>, <i>10</i>(11), e0143196. https://doi.org/10.1371/journal.pone.0143196</span>
+
+<div id="wagner_go-pca:_2015-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_go-pca:_2015-bibtex')">BibTeX</a></li>
+<div id="wagner_go-pca:_2015-bibtex" style="display:none;">
+<pre class="collapse">@article{wagner_go-pca:_2015,
+  title = {{GO}-{PCA}: An Unsupervised Method to Explore Gene Expression Data Using Prior Knowledge},
+  volume = {10},
+  issn = {1932-6203},
+  doi = {10.1371/journal.pone.0143196},
+  shorttitle = {{GO}-{PCA}},
+  pages = {e0143196},
+  number = {11},
+  journaltitle = {{PloS} One},
+  shortjournal = {{PLoS} {ONE}},
+  author = {Wagner, Florian},
+  date = {2015},
+  pmid = {26575370}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.1371/journal.pone.0143196">10.1371/journal.pone.0143196</a></li>
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="hashimshony_cel-seq:_2012">Hashimshony, T., Wagner, F., Sher, N., &amp; Yanai, I. (2012). CEL-Seq: single-cell RNA-Seq by multiplexed linear amplification. <i>Cell Reports</i>, <i>2</i>(3), 666–673. https://doi.org/10.1016/j.celrep.2012.08.003</span>
+
+<div id="hashimshony_cel-seq:_2012-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('hashimshony_cel-seq:_2012-bibtex')">BibTeX</a></li>
+<div id="hashimshony_cel-seq:_2012-bibtex" style="display:none;">
+<pre class="collapse">@article{hashimshony_cel-seq:_2012,
+  title = {{CEL}-Seq: single-cell {RNA}-Seq by multiplexed linear amplification},
+  volume = {2},
+  issn = {2211-1247},
+  url = {http://www.ncbi.nlm.nih.gov/pubmed/22939981},
+  doi = {10.1016/j.celrep.2012.08.003},
+  shorttitle = {{CEL}-Seq},
+  pages = {666--673},
+  number = {3},
+  journaltitle = {Cell Reports},
+  shortjournal = {Cell Rep},
+  author = {Hashimshony, Tamar and Wagner, Florian and Sher, Noa and Yanai, Itai},
+  date = {2012-09-27},
+  pmid = {22939981},
+  keywords = {Reverse Transcriptase Polymerase Chain Reaction, {RNA}, Messenger, Sequence Analysis, {DNA}, Gene Expression Regulation, Caenorhabditis elegans, Multiplex Polymerase Chain Reaction, Animals, {RNA}, Helminth}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.1016/j.celrep.2012.08.003">10.1016/j.celrep.2012.08.003</a></li>
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="levin_developmental_2012">Levin, M., Hashimshony, T., Wagner, F., &amp; Yanai, I. (2012). Developmental milestones punctuate gene expression in the Caenorhabditis embryo. <i>Developmental Cell</i>, <i>22</i>(5), 1101–1108. https://doi.org/10.1016/j.devcel.2012.04.004</span>
+
+<div id="levin_developmental_2012-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('levin_developmental_2012-bibtex')">BibTeX</a></li>
+<div id="levin_developmental_2012-bibtex" style="display:none;">
+<pre class="collapse">@article{levin_developmental_2012,
+  title = {Developmental milestones punctuate gene expression in the Caenorhabditis embryo},
+  volume = {22},
+  issn = {1878-1551},
+  url = {http://www.ncbi.nlm.nih.gov/pubmed/22560298},
+  doi = {10.1016/j.devcel.2012.04.004},
+  pages = {1101--1108},
+  number = {5},
+  journaltitle = {Developmental cell},
+  shortjournal = {Dev. Cell},
+  author = {Levin, Michal and Hashimshony, Tamar and Wagner, Florian and Yanai, Itai},
+  urldate = {2012-07-04},
+  date = {2012-05-15},
+  pmid = {22560298}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.1016/j.devcel.2012.04.004">10.1016/j.devcel.2012.04.004</a></li>
+
+</ul>
+<br />
+
+</div>
+</li></ol>
+
+<h4 id="preprints">Preprints</h4>
+
+<ol class="bibliography"><li><span id="wagner_k-nearest_2017">Wagner, F., Yan, Y., &amp; Yanai, I. (2017). K-nearest neighbor smoothing for high-throughput single-cell RNA-Seq data. <i>BioRxiv</i>. https://doi.org/10.1101/217737</span>
+
+<div id="wagner_k-nearest_2017-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_k-nearest_2017-bibtex')">BibTeX</a></li>
+<div id="wagner_k-nearest_2017-bibtex" style="display:none;">
+<pre class="collapse">@article{wagner_k-nearest_2017,
+  title = {K-nearest neighbor smoothing for high-throughput single-cell {RNA}-Seq data},
+  url = {http://biorxiv.org/content/early/2017/11/21/217737.abstract},
+  doi = {10.1101/217737},
+  journaltitle = {{bioRxiv}},
+  author = {Wagner, Florian and Yan, Yun and Yanai, Itai},
+  date = {2017-11-21}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.1101/217737">10.1101/217737</a></li>
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="wagner_xl-mhg_2017">Wagner, F. (2017). <i>The XL-mHG test for gene set enrichment</i> (No. e1962v3). PeerJ Preprints. Retrieved from https://peerj.com/preprints/1962</span>
+
+<div id="wagner_xl-mhg_2017-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_xl-mhg_2017-bibtex')">BibTeX</a></li>
+<div id="wagner_xl-mhg_2017-bibtex" style="display:none;">
+<pre class="collapse">@report{wagner_xl-mhg_2017,
+  title = {The {XL}-{mHG} test for gene set enrichment},
+  url = {https://peerj.com/preprints/1962},
+  number = {e1962v3},
+  institution = {{PeerJ} Preprints},
+  author = {Wagner, Florian},
+  urldate = {2017-08-02},
+  date = {2017-02-12},
+  langid = {english},
+  note = {{DOI}: 10.7287/peerj.preprints.1962v3},
+  file = {Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/2RITAHAE/1962.html:text/html}
+}
+</pre>
+</div>
+
+
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="wagner_pyaffy:_2016">Wagner, F. (2016). pyAffy: An efficient Python/Cython implementation of the RMA method for processing raw data from Affymetrix expression microarrays. <i>PeerJ Preprints</i>, <i>4</i>, e1790v1. https://doi.org/10.7287/peerj.preprints.1790v1</span>
+
+<div id="wagner_pyaffy:_2016-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_pyaffy:_2016-bibtex')">BibTeX</a></li>
+<div id="wagner_pyaffy:_2016-bibtex" style="display:none;">
+<pre class="collapse">@article{wagner_pyaffy:_2016,
+  title = {{pyAffy}: An efficient Python/Cython implementation of the {RMA} method for processing raw data from Affymetrix expression microarrays},
+  volume = {4},
+  doi = {10.7287/peerj.preprints.1790v1},
+  pages = {e1790v1},
+  journaltitle = {{PeerJ} Preprints},
+  author = {Wagner, Florian},
+  date = {2016-02-27}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.7287/peerj.preprints.1790v1">10.7287/peerj.preprints.1790v1</a></li>
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="wagner_go-pca:_2015">Wagner, F. (2015). GO-PCA: An Unsupervised Method to Explore Biological Heterogeneity Based on Gene Expression and Prior Knowledge. <i>BioRxiv</i>, 018705. https://doi.org/10.1101/018705</span>
+
+<div id="wagner_go-pca:_2015-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_go-pca:_2015-bibtex')">BibTeX</a></li>
+<div id="wagner_go-pca:_2015-bibtex" style="display:none;">
+<pre class="collapse">@article{wagner_go-pca:_2015,
+  title = {{GO}-{PCA}: An Unsupervised Method to Explore Biological Heterogeneity Based on Gene Expression and Prior Knowledge},
+  rights = {© 2015, Published by Cold Spring Harbor Laboratory Press. This pre-print is available under a Creative Commons License (Attribution-{NonCommercial}-{NoDerivs} 4.0 International), {CC} {BY}-{NC}-{ND} 4.0, as described at http://creativecommons.org/licenses/by-nc-nd/4.0/},
+  url = {http://biorxiv.org/content/early/2015/05/05/018705},
+  doi = {10.1101/018705},
+  shorttitle = {{GO}-{PCA}},
+  pages = {018705},
+  journaltitle = {{bioRxiv}},
+  author = {Wagner, Florian},
+  urldate = {2015-06-25},
+  date = {2015-05-05},
+  file = {Full Text PDF:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/4HZ8JV5A/Wagner - 2015 - GO-PCA An Unsupervised Method to Explore Biologic.pdf:application/pdf;Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/2K9U8B69/018705.html:text/html}
+}
+</pre>
+</div>
+
+
+
+<li>DOI: <a href="https://dx.doi.org/10.1101/018705">10.1101/018705</a></li>
+
+</ul>
+<br />
+
+</div>
+</li>
+<li><span id="wagner_xl-mhg_2015">Wagner, F. (2015). The XL-mHG Test For Enrichment: A Technical Report. <i>ArXiv:1507.07905 [Stat]</i>. Retrieved from http://arxiv.org/abs/1507.07905</span>
+
+<div id="wagner_xl-mhg_2015-materials">
+<ul class="nav nav-pills">
+
+<li><a data-toggle="collapse" href="javascript:toggleDiv('wagner_xl-mhg_2015-bibtex')">BibTeX</a></li>
+<div id="wagner_xl-mhg_2015-bibtex" style="display:none;">
+<pre class="collapse">@article{wagner_xl-mhg_2015,
+  title = {The {XL}-{mHG} Test For Enrichment: A Technical Report},
+  url = {http://arxiv.org/abs/1507.07905},
+  shorttitle = {The {XL}-{mHG} Test For Enrichment},
+  journaltitle = {{arXiv}:1507.07905 [stat]},
+  author = {Wagner, Florian},
+  urldate = {2015-08-04},
+  date = {2015-07-28},
+  eprinttype = {arxiv},
+  eprint = {1507.07905},
+  keywords = {Statistics - Other Statistics},
+  file = {arXiv\:1507.07905 PDF:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/3JF4J97T/Wagner - 2015 - The XL-mHG Test For Enrichment A Technical Report.pdf:application/pdf;arXiv.org Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/M955DVXS/1507.html:text/html}
+}
+</pre>
+</div>
+
+
+
+</ul>
+<br />
+
+</div>
+</li></ol>
+
+<h3 id="contact">Contact</h3>
+
+<p><a href="mailto:florian.wagner@nyu.edu">florian.wagner@nyu.edu</a></p>
 
   </div>
 </article>
@@ -73,15 +341,15 @@
       <div class="container">
         <footer class="footer">
           
+<a href="mailto:florian.wagner@nyu.edu"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/flo-compbio"><i class="svg-icon github"></i></a>
 
 
 
-<a href="https://github.com/barryclark/jekyll-now"><i class="svg-icon github"></i></a>
 
-
-
-
-<a href="https://www.twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+<a href="https://www.twitter.com/flo_compbio"><i class="svg-icon twitter"></i></a>
 
 
 

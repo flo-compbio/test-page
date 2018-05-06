@@ -1,0 +1,64 @@
+@article{wagner_k-nearest_2017,
+	title = {K-nearest neighbor smoothing for high-throughput single-cell {RNA}-Seq data},
+	url = {http://biorxiv.org/content/early/2017/11/21/217737.abstract},
+	doi = {10.1101/217737},
+	abstract = {High-throughput single-cell {RNA}-Seq ({scRNA}-Seq) methods can efficiently generate expression profiles for thousands of cells, and promise to enable the comprehensive molecular characterization of all cell types and states present in heterogeneous tissues. However, compared to bulk {RNA}-Seq, single-cell expression profiles are extremely noisy and only capture a fraction of transcripts present in the cell. Here, we describe an algorithm to smooth {scRNA}-Seq data, with the goal of significantly improving the signal-to-noise ratio of each profile, while largely preserving biological expression heterogeneity. The algorithm is based on the observation that across platforms, the technical noise exhibited by {UMI}-filtered {scRNA}-Seq data closely follows Poisson statistics. Smoothing is performed by first identifying the nearest neighbors of each cell in a step-wise fashion, based on variance-stabilized and partially smoothed expression profiles, and then aggregating their {UMI} counts. For multiple datasets, the application of our algorithm resulted in more stable cell type-specific expression profiles, and recovered correlations between co-expressed genes. More generally, smoothing improved the results of commonly used dimensionality reduction and clustering methods, greatly facilitating the identification of cell subsets and clusters of co-expressed genes. Our work implies that there exists a quantitative relationship between the number of cells profiled and the potential accuracy with which individual cell types or states can be characterized, and helps unlock the full potential of {scRNA}-Seq to elucidate molecular processes in healthy and disease tissues.},
+	journaltitle = {{bioRxiv}},
+	author = {Wagner, Florian and Yan, Yun and Yanai, Itai},
+	date = {2017-11-21}
+}
+
+@report{wagner_xl-mhg_2017,
+	title = {The {XL}-{mHG} test for gene set enrichment},
+	url = {https://peerj.com/preprints/1962},
+	abstract = {The nonparametric minimum hypergeometric ({mHG}) test is a popular alternative to Kolmogorov-Smirnov ({KS})-type tests for determining gene set enrichment. However, these approaches have not been compared to each other in a quantitative manner. Here, I first perform a simulation study to show that the {mHG} test is significantly more powerful than the one-sided {KS} test for detecting gene set enrichment. I then illustrate a shortcoming of the {mHG} test, which has motivated a semiparametric generalization of the test, termed the {XL}-{mHG} test. I describe an improved quadratic-time algorithm for the efficient calculation of exact {XL}-{mHG} p-values, as well as a linear-time algorithm for calculating a tighter upper bound for the p-value. Finally, I demonstrate that the {XL}-{mHG} test outperforms the one-sided {KS} test when applied to a reference gene expression study, and discuss general principles for analyzing gene set enrichment using the {XL}-{mHG} test. An efficient open-source Python/Cython implementation of the {XL}-{mHG} test is provided in the xlmhg package, available from {PyPI} and {GitHub} (https://github.com/flo-compbio/xlmhg) under an {OSI}-approved license.},
+	number = {e1962v3},
+	institution = {{PeerJ} Preprints},
+	author = {Wagner, Florian},
+	urldate = {2017-08-02},
+	date = {2017-02-12},
+	langid = {english},
+	note = {{DOI}: 10.7287/peerj.preprints.1962v3},
+	file = {Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/2RITAHAE/1962.html:text/html}
+}
+
+@article{wagner_pyaffy:_2016,
+	title = {{pyAffy}: An efficient Python/Cython implementation of the {RMA} method for processing raw data from Affymetrix expression microarrays},
+	volume = {4},
+	doi = {10.7287/peerj.preprints.1790v1},
+	pages = {e1790v1},
+	journaltitle = {{PeerJ} Preprints},
+	author = {Wagner, Florian},
+	date = {2016-02-27}
+}
+@article{wagner_go-pca:_2015,
+	title = {{GO}-{PCA}: An Unsupervised Method to Explore Biological Heterogeneity Based on Gene Expression and Prior Knowledge},
+	rights = {© 2015, Published by Cold Spring Harbor Laboratory Press. This pre-print is available under a Creative Commons License (Attribution-{NonCommercial}-{NoDerivs} 4.0 International), {CC} {BY}-{NC}-{ND} 4.0, as described at http://creativecommons.org/licenses/by-nc-nd/4.0/},
+	url = {http://biorxiv.org/content/early/2015/05/05/018705},
+	doi = {10.1101/018705},
+	shorttitle = {{GO}-{PCA}},
+	abstract = {Genome-wide expression profiling is a cost-efficient and widely used method to characterize heterogeneous populations of cells, tissues, biopsies, or other biological specimen. The exploratory analysis of such datasets typically relies on generic unsupervised methods, e.g. principal component analysis or hierarchical clustering. However, generic methods fail to exploit the significant amount of knowledge that exists about the molecular functions of genes. Here, I introduce {GO}-{PCA}, an unsupervised method that incorporates prior knowledge about gene functions in the form of gene ontology ({GO}) annotations. {GO}-{PCA} aims to discover and represent biological heterogeneity along all major axes of variation in a given dataset, while suppressing heterogeneity due to technical biases. To this end, {GO}-{PCA} combines principal component analysis ({PCA}) with nonparametric {GO} enrichment analysis, and uses the results to generate expression signatures based on small sets of functionally related genes. I first applied {GO}-{PCA} to expression data from diverse lineages of the human hematopoietic system, and obtained a small set of signatures that captured known cell characteristics for most lineages. I then applied the method to expression profiles of glioblastoma ({GBM}) tumor biopsies, and obtained signatures that were strongly associated with multiple previously described {GBM} subtypes. Surprisingly, {GO}-{PCA} discovered a cell cycle-related signature that exhibited significant differences between the Proneural and the prognostically favorable {GBM} {CpG} Island Methylator (G-{CIMP}) subtypes, suggesting that the G-{CIMP} subtype is characterized in part by lower mitotic activity. Previous expression-based classifications have failed to separate these subtypes, demonstrating that {GO}-{PCA} can detect heterogeneity that is missed by other methods. My results show that {GO}-{PCA} is a powerful and versatile expression-based method that facilitates exploration of large-scale expression data, without requiring additional types of experimental data. The low-dimensional representation generated by {GO}-{PCA} lends itself to interpretation, hypothesis generation, and further analysis.},
+	pages = {018705},
+	journaltitle = {{bioRxiv}},
+	author = {Wagner, Florian},
+	urldate = {2015-06-25},
+	date = {2015-05-05},
+	file = {Full Text PDF:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/4HZ8JV5A/Wagner - 2015 - GO-PCA An Unsupervised Method to Explore Biologic.pdf:application/pdf;Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/2K9U8B69/018705.html:text/html}
+}
+
+@article{wagner_xl-mhg_2015,
+	title = {The {XL}-{mHG} Test For Enrichment: A Technical Report},
+	url = {http://arxiv.org/abs/1507.07905},
+	shorttitle = {The {XL}-{mHG} Test For Enrichment},
+	abstract = {The minimum hypergeometric test ({mHG}) is a powerful nonparametric hypothesis test to detect enrichment in ranked binary lists. Here, I provide a detailed review of its definition, as well as the algorithms used in its implementation, which enable the efficient computation of an exact p-value. I then introduce a generalization of the {mHG}, termed {XL}-{mHG}, which provides additional control over the type of enrichment tested, and describe the precise algorithmic modifications necessary to compute its test statistic and p-value. The {XL}-{mHG} algorithm is a building block of {GO}-{PCA}, a recently proposed method for the exploratory analysis of gene expression data using prior knowledge.},
+	journaltitle = {{arXiv}:1507.07905 [stat]},
+	author = {Wagner, Florian},
+	urldate = {2015-08-04},
+	date = {2015-07-28},
+	eprinttype = {arxiv},
+	eprint = {1507.07905},
+	keywords = {Statistics - Other Statistics},
+	file = {arXiv\:1507.07905 PDF:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/3JF4J97T/Wagner - 2015 - The XL-mHG Test For Enrichment A Technical Report.pdf:application/pdf;arXiv.org Snapshot:/home/flo/.mozilla/firefox/ekoe0j4p.default/zotero/storage/M955DVXS/1507.html:text/html}
+}
+
+
